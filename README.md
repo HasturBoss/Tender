@@ -7,4 +7,7 @@
 chmod +x ./V8ray/vim-config.sh
 ./vim-config.sh
 input: y or Y, n or N
+
+OR:
+./vim-config.sh -a
 ```
