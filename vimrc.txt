@@ -11,11 +11,11 @@ call plug#end()
 
 " The ycm-core config
 " Must be set runtimepath("/home/<username>/.vim/plugin/ycm")
-set runtimepath+=/home/user/.vim/plugin/ycm
+set runtimepath+=/home/<username>/.vim/plugin/ycm
 " Must be set python3 of path("/usr/bin/python3")
 let g:ycm_python_binary_path = '/usr/bin/python3'
 " Must be set '.ycm_extra_conf.py'("/home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py")
-let g:ycm_global_ycm_extra_conf = '/home/user/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '/home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py'
 " Stop notification for ycm_extra_conf file,if it is zero.
 let g:ycm_confirm_extra_conf = 1
 " Stop to show programme check out for ycm_show_diagnostics_ui arguments,if it is zero.
