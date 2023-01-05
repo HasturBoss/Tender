@@ -58,7 +58,7 @@ vim_config() {
 ycm_extra_conf() {
     if [ -f "./V8ray/ycm_extra_conf.txt" ]; then
         local var=1
-        while(( $var<=99 ))
+        while (( $var<=99 ))
         do
             if [ -d "/usr/lib/gcc/x86_64-linux-gnu/$var" -a "/usr/include/c++/$var"]; then
                 sed "s/9/$var/g" ./V8ray/ycm_extra_conf.txt > ./V8ray/ycm_extra_conf_bak.txt
