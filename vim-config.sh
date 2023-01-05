@@ -29,7 +29,7 @@ vim_config() {
     TMP_FILE="$(mktemp)"
     read -p "Please enter your current username: " current_username
     cut -d: -f1 /etc/passwd > TMP_FILE
-    confirm_username="$(grep -o "^$current_username$" $TMP_FILE)"
+    confirm_username="$(grep -o "^$current_username" $TMP_FILE)"
     "rm" "$TMP_FILE"
     if [ "$confirm_username" = "$current_username" ]; then
         if [ -d "/home/$current_username/.vim" ]; then
