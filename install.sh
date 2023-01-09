@@ -64,7 +64,7 @@ ycm_extra_conf() {
         local var=1
         for var in $(seq 1 23)
         do
-            if [ -d "/usr/lib/gcc/x86_64-linux-gnu/$var" -a "/usr/include/c++/$var"]; then
+            if [ -d "/usr/lib/gcc/x86_64-linux-gnu/$var" -a "/usr/include/c++/$var" ]; then
                 tr -d "\015" <./Tender/ycm_extra_conf.txt> ./Tender/ycm_extra_conf_bak.txt
                 cp -f ./Tender/ycm_extra_conf_bak.txt ./Tender/ycm_extra_conf.txt
                 sed "s/9/$var/g" ./Tender/ycm_extra_conf.txt > ./Tender/ycm_extra_conf_bak.txt
