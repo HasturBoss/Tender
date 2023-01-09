@@ -1,0 +1,165 @@
+<<<<<<< HEAD
+# .vimrc
+(
+" The vim-plug config
+" unix "~/.vim/plugin" or win "~/vimfiles/plugin"
+" Following install ycm("ycm.txt"),"coc.nvim" need nodejs(look for "coc.txt")
+" If it is root,folder to use from "/root/.vim/plugin"
+call plug#begin('/home/<username>/.vim/plugin')
+" The coc had gotten lsp
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+" The ycm-core config
+" Must be set runtimepath("/home/<username>/.vim/plugin/ycm")
+set runtimepath+=/home/<username>/.vim/plugin/ycm
+" Must be set python3 of path("/usr/bin/python3")
+let g:ycm_python_binary_path = '/usr/bin/python3'
+" Must be set '.ycm_extra_conf.py'("/home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py")
+let g:ycm_global_ycm_extra_conf = '/home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py'
+" Stop notification for ycm_extra_conf file,if it is zero.
+let g:ycm_confirm_extra_conf = 1
+" Stop to show programme check out for ycm_show_diagnostics_ui arguments,if it is zero.
+let g:ycm_show_diagnostics_ui = 1
+" Stop Syntax keyword completion for ycm_seed_identifiers_with_syntax arguments,if it is zero.
+let g:ycm_seed_identifiers_with_syntax = 1
+" Stop String and annotation is completed for ycm_collect_identifiers_from_tags_files arguments,if it is zero.
+let g:ycm_collect_identifiers_from_tags_files = 1
+" Stop YCM's engine for ycm_collect_identifiers_from_tags_files arguments,if it is zero.
+let g:ycm_collect_identifiers_from_tags_files = 1
+" Set Syntax keyword completion to automatic.
+let g:ycm_semantic_triggers = {'c,cpp': ['re!\w{3}']}
+" The 'Enter' to be selected String currently.
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+" The "KeyBoard('goto') " to jump definition.
+nnoremap goto :YcmCompleter GoToDefinitionElseDeclaration
+
+" The vim-core config
+set number
+
+)
+=======
+<<<<<<< HEAD
+# .vimrc
+(
+" The vim-plug config
+" unix "~/.vim/plugin" or win "~/vimfiles/plugin"
+" Following install ycm("ycm.txt"),"coc.nvim" need nodejs(look for "coc.txt")
+" If it is root,folder to use from "/root/.vim/plugin"
+call plug#begin('/home/<username>/.vim/plugin')
+" The coc had gotten lsp
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+" The ycm-core config
+" Must be set runtimepath("/home/<username>/.vim/plugin/ycm")
+set runtimepath+=/home/<username>/.vim/plugin/ycm
+" Must be set python3 of path("/usr/bin/python3")
+let g:ycm_python_binary_path = '/usr/bin/python3'
+" Must be set '.ycm_extra_conf.py'("/home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py")
+let g:ycm_global_ycm_extra_conf = '/home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py'
+" Stop notification for ycm_extra_conf file,if it is zero.
+let g:ycm_confirm_extra_conf = 1
+" Stop to show programme check out for ycm_show_diagnostics_ui arguments,if it is zero.
+let g:ycm_show_diagnostics_ui = 1
+" Stop Syntax keyword completion for ycm_seed_identifiers_with_syntax arguments,if it is zero.
+let g:ycm_seed_identifiers_with_syntax = 1
+" Stop String and annotation is completed for ycm_collect_identifiers_from_tags_files arguments,if it is zero.
+let g:ycm_collect_identifiers_from_tags_files = 1
+" Stop YCM's engine for ycm_collect_identifiers_from_tags_files arguments,if it is zero.
+let g:ycm_collect_identifiers_from_tags_files = 1
+" Set Syntax keyword completion to automatic.
+let g:ycm_semantic_triggers = {'c,cpp': ['re!\w{3}']}
+" The 'Enter' to be selected String currently.
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+" The "KeyBoard('goto') " to jump definition.
+nnoremap goto :YcmCompleter GoToDefinitionElseDeclaration
+
+" The vim-core config
+set number
+
+)
+=======
+<<<<<<< HEAD
+# .vimrc
+(
+" The vim-plug config
+" unix "~/.vim/plugin" or win "~/vimfiles/plugin"
+" Following install ycm("ycm.txt"),"coc.nvim" need nodejs(look for "coc.txt")
+" If it is root,folder to use from "/root/.vim/plugin"
+call plug#begin('/home/<username>/.vim/plugin')
+" The coc had gotten lsp
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+" The ycm-core config
+" Must be set runtimepath("/home/<username>/.vim/plugin/ycm")
+set runtimepath+=/home/<username>/.vim/plugin/ycm
+" Must be set python3 of path("/usr/bin/python3")
+let g:ycm_python_binary_path = '/usr/bin/python3'
+" Must be set '.ycm_extra_conf.py'("/home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py")
+let g:ycm_global_ycm_extra_conf = '/home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py'
+" Stop notification for ycm_extra_conf file,if it is zero.
+let g:ycm_confirm_extra_conf = 1
+" Stop to show programme check out for ycm_show_diagnostics_ui arguments,if it is zero.
+let g:ycm_show_diagnostics_ui = 1
+" Stop Syntax keyword completion for ycm_seed_identifiers_with_syntax arguments,if it is zero.
+let g:ycm_seed_identifiers_with_syntax = 1
+" Stop String and annotation is completed for ycm_collect_identifiers_from_tags_files arguments,if it is zero.
+let g:ycm_collect_identifiers_from_tags_files = 1
+" Stop YCM's engine for ycm_collect_identifiers_from_tags_files arguments,if it is zero.
+let g:ycm_collect_identifiers_from_tags_files = 1
+" Set Syntax keyword completion to automatic.
+let g:ycm_semantic_triggers = {'c,cpp': ['re!\w{3}']}
+" The 'Enter' to be selected String currently.
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+" The "KeyBoard('goto') " to jump definition.
+nnoremap goto :YcmCompleter GoToDefinitionElseDeclaration
+
+" The vim-core config
+set number
+
+)
+=======
+# .vimrc
+(
+" The vim-plug config
+" unix "~/.vim/plugin" or win "~/vimfiles/plugin"
+" Following install ycm("ycm.txt"),"coc.nvim" need nodejs(look for "coc.txt")
+" If it is root,folder to use from "/root/.vim/plugin"
+call plug#begin('/home/<username>/.vim/plugin')
+" The coc had gotten lsp
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+call plug#end()
+
+" The ycm-core config
+" Must be set runtimepath("/home/<username>/.vim/plugin/ycm")
+set runtimepath+=/home/<username>/.vim/plugin/ycm
+" Must be set python3 of path("/usr/bin/python3")
+let g:ycm_python_binary_path = '/usr/bin/python3'
+" Must be set '.ycm_extra_conf.py'("/home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py")
+let g:ycm_global_ycm_extra_conf = '/home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py'
+" Stop notification for ycm_extra_conf file,if it is zero.
+let g:ycm_confirm_extra_conf = 1
+" Stop to show programme check out for ycm_show_diagnostics_ui arguments,if it is zero.
+let g:ycm_show_diagnostics_ui = 1
+" Stop Syntax keyword completion for ycm_seed_identifiers_with_syntax arguments,if it is zero.
+let g:ycm_seed_identifiers_with_syntax = 1
+" Stop String and annotation is completed for ycm_collect_identifiers_from_tags_files arguments,if it is zero.
+let g:ycm_collect_identifiers_from_tags_files = 1
+" Stop YCM's engine for ycm_collect_identifiers_from_tags_files arguments,if it is zero.
+let g:ycm_collect_identifiers_from_tags_files = 1
+" Set Syntax keyword completion to automatic.
+let g:ycm_semantic_triggers = {'c,cpp': ['re!\w{3}']}
+" The 'Enter' to be selected String currently.
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
+" The "KeyBoard('goto') " to jump definition.
+nnoremap goto :YcmCompleter GoToDefinitionElseDeclaration
+
+" The vim-core config
+set number
+
+)
+>>>>>>> c48bc75 (Initial commit)
+>>>>>>> 7796b43 (Second commit)
+>>>>>>> bed9b87 (Initial commit)
