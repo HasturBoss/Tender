@@ -1,4 +1,4 @@
-# V8ray: run "YouCompleteMe", "Plugin", "NerdTree"
+# Tender: run "YouCompleteMe", "Plugin", "NerdTree"
 ![LICENSE](https://img.shields.io/github/license/HasturBoss/Tender)
 ![PNG](https://github.com/HasturBoss/Tender/raw/main/VimKey.png)
 
