@@ -151,7 +151,7 @@ def CheckFileIntegrity( file_path, check_sum ):
 
 def DownloadFileTo( download_url, file_path ):
   # Select local ip
-  proxy = "http://<localhost>:10809"
+  proxy = "http://<localhost>:<port>"
   proxy_support=urllib.request.ProxyHandler({'http':proxy})
   opener = urllib.request.build_opener(proxy_support)
   urllib.request.install_opener(opener)
