@@ -9,5 +9,5 @@ chmod +x ./Tender/install.sh
 input: y or Y, n or N
 
 OR:
-./vim-config.sh -a
+./install.sh -a
 ```
