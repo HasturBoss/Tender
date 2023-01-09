@@ -88,7 +88,7 @@ clangd_config() {
         if [ -f "./Tender/vim-language-server/third_party/ycmd/build.py" ]; then
             echo -e "  \033[31m<0. (127.0.0.1:10809)>\n\033[0m" \
             " \033[31m<1. (10.0.2.2:10809)>\n\033[0m" \
-            "\033[31mEdit ./Tender/vim-language-server/install.sh\033[0m"
+            "\033[31m Edit ./Tender/vim-language-server/install.sh\033[0m"
             read -p "Please select local ip and port(0 or 1): " key
             case "$key" in
                 '0')
