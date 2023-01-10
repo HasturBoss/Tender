@@ -95,14 +95,14 @@ clangd_config() {
                     var_0='127.0.0.1'
                     sed -i "s/<localhost>/$var_0/g" ./Tender/vim-language-server/third_party/ycmd/build.py
                     var_1='10809'
-                    sed -i "s/<port>/$var_0/g" ./Tender/vim-language-server/third_party/ycmd/build.py
+                    sed -i "s/<port>/$var_1/g" ./Tender/vim-language-server/third_party/ycmd/build.py
                     echo "The python file change successfully!"
                     ;;
                 '1')
                     var_2='10.0.2.2'
-                    sed -i "s/<localhost>/$var_0/g" ./Tender/vim-language-server/third_party/ycmd/build.py
+                    sed -i "s/<localhost>/$var_2/g" ./Tender/vim-language-server/third_party/ycmd/build.py
                     var_3='10809'
-                    sed -i "s/<port>/$var_0/g" ./Tender/vim-language-server/third_party/ycmd/build.py
+                    sed -i "s/<port>/$var_3/g" ./Tender/vim-language-server/third_party/ycmd/build.py
                     echo "The python file change successfully!"
                     ;;
                 *)
