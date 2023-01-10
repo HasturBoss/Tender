@@ -153,9 +153,9 @@ def DownloadFileTo( download_url, file_path ):
   # Select local ip
   proxy = "http://<localhost>:<port>"
   proxy_support=urllib.request.ProxyHandler({'http':proxy})
+  opener = urllib.request.build_opener(proxy_support)
   # Install http.proxy
-  # opener = urllib.request.build_opener(proxy_support)
-  urllib.request.install_opener(opener)
+  # urllib.request.install_opener(opener)
   with urllib.request.urlopen( download_url ) as response:
     with open( file_path, 'wb' ) as package_file:
       package_file.write( response.read() )
