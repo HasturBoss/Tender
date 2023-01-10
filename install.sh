@@ -22,7 +22,7 @@ vimrc_config() {
         tr -d "\015" <./Tender/vimrc.txt> ./Tender/vimrc_bak.txt
         sed -i "s/<username>/$current_username/g" ./Tender/vimrc_bak.txt
         cp -f /usr/share/vim/vimrc /usr/share/vim/vimrc_bak
-        cat /usr/share/vim/vimrc ./Tender/vimrc_bak.txt | sort | uniq > /usr/share/vim/vimrc
+        cat /usr/share/vim/vimrc ./Tender/vimrc_bak.txt > /usr/share/vim/vimrc
     else
         echo "error: Download failed! Please check your network or try again."
         exit 1
@@ -283,7 +283,16 @@ show_help() {
 main() {
     detection_agent
     download_git
-    vim_config
+    echo -e "\033[31mPlease confirm whether to modify .vimrc file!\033[0m"
+    read -p "Please input y or n, Y or N: " vim
+    if [ $vim = "y" -o $vim = "Y" ]; then
+        vim_config
+    elif [ $vim = "n" -o $vim = "N" ]; then
+        echo "Continue..."
+    else
+        echo "The invalid symbol!"
+        return 1
+    fi
     echo "Please use the correct parameters!"
     use_parameters "$@"
     [[ "$HELP" -eq '1' ]] && show_help
