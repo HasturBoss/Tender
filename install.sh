@@ -115,7 +115,7 @@ clangd_config() {
         fi
         apt install build-essential cmake clangd python3-dev vim-nox
         (
-        python3 ./Tender/vim-language-server/install.py --clangd-completer --cs-completer 
+        python3 ./Tender/vim-language-server/install.py --clangd-completer --cs-completer --verbose
         )
         cp -rf ./Tender/vim-language-server/* /home/$current_username/.vim/plugin/ycm
         echo -e "\033[31mEdit /home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py\033[0m"
