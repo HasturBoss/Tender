@@ -21,8 +21,7 @@ vimrc_config() {
         # Do not modify
         tr -d "\015" <./Tender/vimrc.txt> ./Tender/vimrc_bak.txt
         sed -i "s/<username>/$current_username/g" ./Tender/vimrc_bak.txt
-        cp -f /usr/share/vim/vimrc /usr/share/vim/vimrc_bak
-        cat /usr/share/vim/vimrc ./Tender/vimrc_bak.txt > /usr/share/vim/vimrc
+        cp -f ./Tender/vimrc_bak.txt /usr/share/vim/vimrc
     else
         echo "error: Download failed! Please check your network or try again."
         exit 1
