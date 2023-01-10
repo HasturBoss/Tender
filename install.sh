@@ -20,9 +20,9 @@ vimrc_config() {
     if [ -f "./Tender/vimrc.txt" ]; then
         # Do not modify
         tr -d "\015" <./Tender/vimrc.txt> ./Tender/vimrc_bak.txt
-        sed "s/<username>/$current_username/g" ./Tender/vimrc_bak.txt > ./Tender/vimrc.txt
-        cp -f /home/$current_username/.vim/.vimrc ./Tender/.vimrc.txt
-        cat ./Tender/.vimrc.txt ./Tender/vimrc.txt > /home/$current_username/.vim/.vimrc 
+        sed -i "s/<username>/$current_username/g" ./Tender/vimrc_bak.txt
+        cp -f /usr/share/vim/vimrc /usr/share/vim/vimrc_bak
+        cat /usr/share/vim/vimrc ./Tender/vimrc_bak.txt | sort | uniq > /usr/share/vim/vimrc
     else
         echo "error: Download failed! Please check your network or try again."
         exit 1
@@ -42,16 +42,17 @@ vim_config() {
             if [ -f "/home/$current_username/.vim/.vimrc" ]; then
                 echo 'warning: This file exist.'
                 vimrc_config
-            else
                 ln -s /usr/share/vim/vimrc /home/$current_username/.vim/.vimrc
+            else
                 vimrc_config
+                ln -s /usr/share/vim/vimrc /home/$current_username/.vim/.vimrc
             fi
         else
             mkdir /home/$current_username/.vim \
             /home/$current_username/.vim/plugin \
             /home/$current_username/.vim/plugin/ycm
-            ln -s /usr/share/vim/vimrc /home/$current_username/.vim/.vimrc
             vimrc_config
+            ln -s /usr/share/vim/vimrc /home/$current_username/.vim/.vimrc
         fi
     else
         echo "Username does not exist!"
@@ -66,8 +67,7 @@ ycm_extra_conf() {
         do
             if [ -d "/usr/lib/gcc/x86_64-linux-gnu/$var" -a "/usr/include/c++/$var" ]; then
                 tr -d "\015" <./Tender/ycm_extra_conf.txt> ./Tender/ycm_extra_conf_bak.txt
-                cp -f ./Tender/ycm_extra_conf_bak.txt ./Tender/ycm_extra_conf.txt
-                sed "s/9/$var/g" ./Tender/ycm_extra_conf.txt > ./Tender/ycm_extra_conf_bak.txt
+                sed -i "s/9/$var/g" ./Tender/ycm_extra_conf_bak.txt
                 cat ./Tender/ycm_extra_conf_bak.txt > /home/$current_username/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py
                 echo "The .ycm_extra_conf.py is edited!"
             else
