@@ -153,7 +153,7 @@ def DownloadFileTo( download_url, file_path ):
   # Select local ip
   proxy = "http://<localhost>:<port>"
   proxys = "https://<localhost>:<port>"
-  proxy_support=urllib.request.ProxyHandler({'http':proxy,'https':proxys})
+  proxy_support = urllib.request.ProxyHandler({'http':proxy,'https':proxys})
   opener = urllib.request.build_opener(proxy_support)
   # Install http.proxy
   urllib.request.install_opener(opener)
