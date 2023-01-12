@@ -151,12 +151,14 @@ def CheckFileIntegrity( file_path, check_sum ):
 
 def DownloadFileTo( download_url, file_path ):
   # Select local ip
-  proxy = "http://<localhost>:<port>"
-  proxys = "https://<localhost>:<port>"
-  proxy_support = urllib.request.ProxyHandler({'http':proxy,'https':proxys})
-  opener = urllib.request.build_opener(proxy_support)
+  # proxy = "http://<localhost>:<port>"
+  # proxys = "https://<localhost>:<port>"
+  # proxy_support = urllib.request.ProxyHandler({'http':proxy,'https':proxys})
+  # opener = urllib.request.build_opener(proxy_support)
   # Install http.proxy
-  urllib.request.install_opener(opener)
+  # urllib.request.install_opener(opener)
+  os.environ["HTTP_PROXY"] ='http://<localhost>:<port>'
+  os.environ["HTTPS_PROXY"] ='https://<localhost>:<port>'
   with urllib.request.urlopen( download_url ) as response:
     with open( file_path, 'wb' ) as package_file:
       package_file.write( response.read() )
