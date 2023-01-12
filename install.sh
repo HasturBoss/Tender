@@ -5,6 +5,7 @@ DOWNLOAD_LINK="https://github.com/HasturBoss/Tender.git"
 
 # Chang 'var_0,1,2,...,n'
 # Edit <localhost> and <port>
+# Find var_port and Change var_port for your proxy
 
 # author:HasturBoss
 download_git() {
@@ -89,19 +90,18 @@ clangd_config() {
             echo -e "  \033[31m<0. (127.0.0.1:10809)>\n\033[0m" \
             " \033[31m<1. (10.0.2.2:10809)>\n\033[0m"
             read -p "Please select local ip and port(0 or 1): " key
+            var_port='10809'
             case "$key" in
                 '0')
                     var_0='127.0.0.1'
                     sed -i "s/<localhost>/$var_0/g" ./Tender/vim-language-server/third_party/ycmd/build.py
-                    var_1='10809'
-                    sed -i "s/<port>/$var_1/g" ./Tender/vim-language-server/third_party/ycmd/build.py
+                    sed -i "s/<port>/$var_port/g" ./Tender/vim-language-server/third_party/ycmd/build.py
                     echo "The python file change successfully!"
                     ;;
                 '1')
-                    var_2='10.0.2.2'
-                    sed -i "s/<localhost>/$var_2/g" ./Tender/vim-language-server/third_party/ycmd/build.py
-                    var_3='10809'
-                    sed -i "s/<port>/$var_3/g" ./Tender/vim-language-server/third_party/ycmd/build.py
+                    var_1='10.0.2.2'
+                    sed -i "s/<localhost>/$var_1/g" ./Tender/vim-language-server/third_party/ycmd/build.py
+                    sed -i "s/<port>/$var_port/g" ./Tender/vim-language-server/third_party/ycmd/build.py
                     echo "The python file change successfully!"
                     ;;
                 *)
@@ -112,7 +112,6 @@ clangd_config() {
             echo "error: Download failed! Please check your network or try again."
             exit 1
         fi
-        apt install build-essential cmake clangd python3-dev vim-nox
         (
         python3 ./Tender/vim-language-server/install.py --clangd-completer --cs-completer --verbose
         )
@@ -128,7 +127,7 @@ clangd_config() {
 }
 
 botinline_config() {
-    echo "Please confirm the Vim is installed!"
+    echo "Please confirm the Vim is installed ?"
     read -p "Please input y or n, Y or N: " char
     if [ $char = "y" -o $char = "Y" ]; then
         cp -rf ./Tender/vim-plugin-botinline/ /home/$current_username/.vim/plugin/botinline
@@ -142,7 +141,7 @@ botinline_config() {
 }
 
 nerdtree_config() {
-    echo "Please confirm the Vim is installed!"
+    echo "Please confirm the Vim is installed ?"
     read -p "Please input y or n, Y or N: " char
     if [ $char = "y" -o $char = "Y" ]; then
         cp -rf ./Tender/vim-plugin-nerdtree/ /home/$current_username/.vim/plugin/nerdtree
@@ -156,7 +155,7 @@ nerdtree_config() {
 }
 
 plugin_config() {
-    echo "Please confirm the Vim is installed!"
+    echo "Please confirm the Vim is installed ?"
     read -p "Please input y or n, Y or N: " char
     if [ $char = "y" -o $char = "Y" ]; then
         local var=1
@@ -183,6 +182,8 @@ detection_agent() {
     unset  https_proxy
     apt update
     apt upgrade
+    # Insatll build-essential cmake clangd python3-dev vim-nox for apt-get!
+    apt install build-essential cmake clangd python3-dev vim-nox
 }
 
 use_parameters() {
