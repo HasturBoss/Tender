@@ -158,7 +158,7 @@ def DownloadFileTo( download_url, file_path ):
   # Install http.proxy
   # urllib.request.install_opener(opener)
   os.environ["HTTP_PROXY"] ='http://<localhost>:<port>'
-  os.environ["HTTPS_PROXY"] ='https://<localhost>:<port>'
+  # os.environ["HTTPS_PROXY"] ='https://<localhost>:<port>'
   with urllib.request.urlopen( download_url ) as response:
     with open( file_path, 'wb' ) as package_file:
       package_file.write( response.read() )
