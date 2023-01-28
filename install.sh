@@ -293,7 +293,7 @@ main() {
         echo "The invalid symbol!"
         return 1
     fi
-    echo "Please use the correct parameters!"
+    echo -e "Please use the correct parameters!\n"
     use_parameters "$@"
     [[ "$HELP" -eq '1' ]] && show_help
     [[ "$ALL" -eq '1' ]] && install_all
