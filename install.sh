@@ -81,7 +81,7 @@ ycm_extra_conf() {
 }
 
 clangd_config() {
-    echo -e "\033[31m<Must be executed with root privileges>\033[0m"
+    echo -e "\033[31m\n<Must be executed with root privileges>\033[0m"
     echo 'Please confirm the version, vim-plug,CMake(at least 3.13), Vim(at least 8.1.2269) and Python(at least 3.6)'
     read -p "Please input y or n, Y or N: " char
     if [ $char = "y" -o $char = "Y" ]; then
