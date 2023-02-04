@@ -11,9 +11,9 @@ Plug '/home/<username>/.vim/plugin/botinline'
 call plug#end()
 
 " The vim-nerdtree config
-nnoremap <C-n> :NERDTree<CR>
-nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <C-f> :NERDTreeFind<CR>
+nnoremap <leader>n :NERDTree<CR>
+nnoremap <leader>t :NERDTreeToggle<CR>
+nnoremap <leader>f :NERDTreeFind<CR>
 
 " The vim-airline config
 set t_Co=256
@@ -48,6 +48,8 @@ inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<CR>"
 nnoremap goto :YcmCompleter GoToDefinitionElseDeclaration
 
 " The vim-core config
+set mouse=r
+" Number line
 set number
 " INSERT mode
 let &t_SI = "\<Esc>[6 q" . "\<Esc>]12;green\x7"
