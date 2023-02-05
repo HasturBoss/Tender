@@ -183,7 +183,7 @@ detection_agent() {
     apt update
     apt upgrade
     # Insatll build-essential cmake clangd python3-dev vim-nox for apt-get!
-    apt install build-essential cmake clangd python3-dev vim-nox
+    apt install build-essential cmake clangd python3-dev vim-nox vim
 }
 
 use_parameters() {
@@ -281,20 +281,25 @@ show_help() {
 }
 
 main() {
-    detection_agent
-    download_git
+    echo -e "Please use the correct parameters!\n"
+    use_parameters "$@"
+    if [[ "$HELP" -eq '1' ]];then
+      download_git
+    else
+      detection_agent
+      download_git
+    fi
     echo -e "\033[31mPlease confirm whether to modify .vimrc file!\033[0m"
     read -p "Please input y or n, Y or N: " vim
     if [ $vim = "y" -o $vim = "Y" ]; then
         vim_config
     elif [ $vim = "n" -o $vim = "N" ]; then
-        echo "Continue..."
+        echo "Continue...Waiting..."
     else
         echo "The invalid symbol!"
         return 1
     fi
-    echo -e "Please use the correct parameters!\n"
-    use_parameters "$@"
+    echo "Execution...Waiting..."
     [[ "$HELP" -eq '1' ]] && show_help
     [[ "$ALL" -eq '1' ]] && install_all
     [[ "$BOTTOM" -eq '1' ]] && install_bottom
