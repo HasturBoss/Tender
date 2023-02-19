@@ -88,7 +88,8 @@ clangd_config() {
         if [ -f "./Tender/vim-language-server/third_party/ycmd/build.py" ]; then
             echo -e "\033[31mEdit ./Tender/vim-language-server/install.sh\033[0m"
             echo -e "  \033[31m<0. (127.0.0.1:7890)>\n\033[0m" \
-            " \033[31m<1. (10.0.2.2:7890)>\n\033[0m"
+            " \033[31m<1. (10.0.2.2:7890)>\n\033[0m" \
+            " \033[31m<2. (0.0.0.0:0)>\n\033[0m"
             read -p "Please select local ip and port(0 or 1): " key
             var_port='7890'
             case "$key" in
@@ -102,6 +103,9 @@ clangd_config() {
                     var_1='10.0.2.2'
                     sed -i "s/<localhost>/$var_1/g" ./Tender/vim-language-server/third_party/ycmd/build.py
                     sed -i "s/<port>/$var_port/g" ./Tender/vim-language-server/third_party/ycmd/build.py
+                    echo "The python file change successfully!"
+                    ;;
+                '2')
                     echo "The python file change successfully!"
                     ;;
                 *)
@@ -284,10 +288,10 @@ main() {
     echo -e "Please use the correct parameters!\n"
     use_parameters "$@"
     if [[ "$HELP" -eq '1' ]];then
-      download_git
+        download_git
     else
-      detection_agent
-      download_git
+        detection_agent
+        download_git
     fi
     echo -e "\033[31mPlease confirm whether to modify .vimrc file!\033[0m"
     read -p "Please input y or n, Y or N: " vim
