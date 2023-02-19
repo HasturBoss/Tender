@@ -117,7 +117,7 @@ clangd_config() {
             exit 1
         fi
         (
-        python3 ./Tender/vim-language-server/install.py --clangd-completer --cs-completer --verbose
+        python3 ./Tender/vim-language-server/install.py --clangd-completer --verbose
         )
         cp -rf ./Tender/vim-language-server/* /home/$current_username/.vim/plugin/ycm
         echo -e "\033[31mEdit /home/<username>/.vim/plugin/ycm/third_party/ycmd/examples/.ycm_extra_conf.py\033[0m"
