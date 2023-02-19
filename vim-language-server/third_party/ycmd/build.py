@@ -18,7 +18,6 @@ import tarfile
 from zipfile import ZipFile
 import tempfile
 import urllib.request
-import urllib.parse
 
 
 class InstallationFailed( Exception ):
