@@ -159,11 +159,11 @@ def DownloadFileTo( download_url, file_path ):
   # urllib.request.install_opener(opener)
   try:
     urllib.request.urlopen('https://www.google.com/', timeout=3.0)
-  except Exception as e :
+  except:
     os.environ["HTTP_PROXY"] ='http://<localhost>:<port>'
     os.environ["HTTPS_PROXY"] ='https://<localhost>:<port>'
   finally:
-    print('Successful Internet Connection...')
+    # Custom parameters: return 1
   with urllib.request.urlopen( download_url ) as response:
     with open( file_path, 'wb' ) as package_file:
       package_file.write( response.read() )
