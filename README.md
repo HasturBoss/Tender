@@ -5,11 +5,11 @@
 * Use .sh on </home/usr/>
 ```Shell
 chmod +x ./Tender/install.sh
-./install.sh
+./install.sh -a
 input: y or Y, n or N
 
 OR:
-./install.sh -a
+./install.sh -h
 ```
 
 * Use vim
