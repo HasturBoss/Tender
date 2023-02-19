@@ -18,6 +18,7 @@ import tarfile
 from zipfile import ZipFile
 import tempfile
 import urllib.request
+import urllib.parse
 
 
 class InstallationFailed( Exception ):
@@ -157,8 +158,13 @@ def DownloadFileTo( download_url, file_path ):
   # opener = urllib.request.build_opener(proxy_support)
   # Install http.proxy
   # urllib.request.install_opener(opener)
-  os.environ["HTTP_PROXY"] ='http://<localhost>:<port>'
-  os.environ["HTTPS_PROXY"] ='https://<localhost>:<port>'
+  try:
+    urllib.request.urlopen('https://www.google.com/', timeout=3.0)
+  except Exception as e :
+    os.environ["HTTP_PROXY"] ='http://<localhost>:<port>'
+    os.environ["HTTPS_PROXY"] ='https://<localhost>:<port>'
+  finally:
+    print('Successful Internet Connection...')
   with urllib.request.urlopen( download_url ) as response:
     with open( file_path, 'wb' ) as package_file:
       package_file.write( response.read() )
