@@ -163,10 +163,11 @@ def DownloadFileTo( download_url, file_path ):
     os.environ["HTTP_PROXY"] ='http://<localhost>:<port>'
     os.environ["HTTPS_PROXY"] ='https://<localhost>:<port>'
   finally:
+    print('Continue...')
     # Custom parameters: return 1
-    with urllib.request.urlopen( download_url ) as response:
-      with open( file_path, 'wb' ) as package_file:
-        package_file.write( response.read() )
+  with urllib.request.urlopen( download_url ) as response:
+    with open( file_path, 'wb' ) as package_file:
+      package_file.write( response.read() )
 
 
 def OnMac():
